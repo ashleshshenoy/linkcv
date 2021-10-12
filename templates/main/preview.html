@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+    <link rel="stylesheet" href="{% static  'css/preview.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<body>
+
+
+    {% if video_check and resume_check  %}
+  
+        <div class="preview-container">
+          
+          <div class="resume-container">
+            <a href="{% url 'home-page' %}">
+              <button  id="back-button"> 
+                <i class="fa fa-arrow-circle-left"></i>  
+              </button>
+            </a>
+            <embed  id="pdf" src="{{resume.file.url}}" frameBorder="0" >
+          </div>
+
+
+        <div class="video-container">
+            <div class="video-player">
+              <video id="video" controls ><source id="source" src="{{ videos.first.file.url }}"></video>       
+            </div>
+
+            <div class="playlist-control">
+                <div class="auto-play"> 
+                  <div class="auto-play-control-btn">A
+                  </div>
+                </div>
+            </div>
+            
+            <div class="video-playlist">
+                {% for video in vidoes %}
+                <div data-url="{{video.file.url}}" class="video-wrap-container">
+                  <i  class="fa fa-play-circle icon"></i>
+                  {{video.title|title}}
+                </div>
+                {% endfor %}
+             </div>
+
+          </div>
+
+        </div>
+
+
+
+      {% elif resume_check  %}
+      
+    <a href="{% url 'home-page' %}">
+      <button  id="back-button"> 
+        <i class="fa fa-arrow-circle-left"></i>  
+      </button>
+    </a>
+
+    <iframe
+    id="pdf"
+    src="{{ resume.file.url }}#toolbar=0& navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0 "
+    width="100%"
+    style="border: 20px solid var(--primary); height: 100vh;
+      box-sizing: border-box;
+    " ></iframe>
+    
+
+    {% else %}
+        <p style="text-align: center;color:red; font-size:2rem;">no active resume found!</p>
+    {% endif %}
+
+
+
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="{% static 'js/preview.js' %}"></script>
+
+</body>
+</html>

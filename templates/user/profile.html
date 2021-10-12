@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .outer-container{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-wrap: wrap;
+
+    }
+    .text-container{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 400px;
+        min-height:300px;
+        border-radius: 3px;
+        background-color:rgb(215, 216, 252);
+    }
+    img{
+        width:auto;
+        height:300px;
+
+    }
+</style>
+<div class="outer-container container">
+   
+            <img src="{{user.profile.image.url}}"  alt="">
+            <div class="text-container">
+                <p>username : {{ user.username }}</p>
+                <p>email :{{ user.email}}</p>
+                <p>Subscription : {{sub}}</p>
+                <p>days left : {{days}}</p>
+                <a class="btn mt-5 btn-primary text-light" href="{% url 'profile-edit' %}">edit</a>
+            </div>
+
+</div>
+
+
+{% endblock %}

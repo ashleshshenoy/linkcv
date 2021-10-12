@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/video.css'  %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Video</title>
+{% endblock %}
+{% block content %}
+
+
+        <div class=" box display-container">
+                {% if user.video_set.first %}
+
+                    {% for video in user.video_set.all %}
+                    <div class="video-wrap-container   ">
+                        <i class="fa fa-play-circle icon"></i>
+                        {{video.title|title}}                  
+                        <a href="{% url 'delete-video' video.id %}"><i class="fa fa-trash delete-icon"></i></a>
+
+                    </div>
+                    {% endfor %}
+
+
+                {% else %}
+                    <p>No video upload yet.</p>    
+                {% endif %}
+
+        </div>
+
+        <div class=" box input-container">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <textarea type="text" name="video-title" id="video-title" maxlength ="40"  placeholder="Video title" required></textarea>
+                <input type="file" accept="video/*" name="video-uploader" id="" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+ 
+{% endblock %}

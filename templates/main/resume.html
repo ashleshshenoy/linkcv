@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head  %}
+    <title>resume</title>
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}">
+{% endblock %}
+
+{% block content %} 
+
+
+<div class="preview-container box">
+    {% if user.resume %}
+    <iframe id="preview"  src= "{{ user.resume.file.url }}#navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0 "  style="width:100%; " ></iframe>
+    {% else %}
+        <p>Upload your resume to get preview of it.</p>
+    {% endif %}
+</div>
+
+<div class=" box " style="padding-left:15%">
+<form  action="" method="post" enctype="multipart/form-data"  >
+    {% csrf_token %} 
+    <input type="file" name="file-uploader" id="file-uploader"  required>
+    <button type="submit"  >Upload</button>
+</div>
+</form>  
+
+
+<script src="{% static 'js/resume.js' %}"></script>
+{% endblock %}

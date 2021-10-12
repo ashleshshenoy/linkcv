@@ -1,0 +1,83 @@
+:root{
+    --primary  : #1E3F66;
+    --secondary:#000028 ;
+    --third:white;
+}
+
+body {
+    padding-left: 6rem;
+    min-height: 100vh;
+}
+
+.custom-navbar-container {
+    height: 100vh;   
+    position:fixed;
+    left:0px;
+    top:0px;
+    width: 6rem;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+}
+
+.custom-navbar {
+    height: 85%;
+    width: 60%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;   
+    border-radius:5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex;
+    align-items: center;
+    background-color:var(--primary);
+}
+
+.custom-navbar-container svg{
+    margin-top:2rem;
+    height:2rem;
+    width:2rem;
+    color: var(--third);
+}
+
+.user-avatar {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius:100rem;
+    border: 2px solid var(--third);
+    padding:0px;
+    display:flex;    
+    height: 3rem;
+    width: 3rem;
+    margin-top:1rem;
+}   
+
+.user-avatar svg{
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/* 
+    ------------------------  scrollbar styling ----------------
+*/
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background-color:rgba(128, 128, 128, 0.2);
+}
+  
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+
+  }
+
+
+

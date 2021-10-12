@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<style>
+    body{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        width:30%;
+
+    }
+</style>
+    <div class="container">
+        <h5>CURRENT PLAN</h5>
+        <p>Plan status : {% if user.profile.is_subscribed %} active {% else %} Inactive {% endif %}</p>
+        <p>Plan Validity :{% if user.profile.is_subscribed %}  {{user.profile.subscription_validity}} {% else %} None {% endif %}</p>
+        <h5>BUY PLAN</h5>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p> <select name="validity" id="validity" >
+            <option value="10">10 days</option>
+            <option value="28" >28 days</option>
+             <option value="51">51 days</option>
+             <option value="99">99 days</option>
+        </select></p>
+        <button type="submit" class="btn btn-primary">Buy</button>
+        </form>
+    </div>
+
+
+{% endblock%}
