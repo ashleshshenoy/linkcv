@@ -1,2 +1,3 @@
-# linkcv
-mini project to host resumes with additional features
+# linkcv prototype
+
+project to host resumes with additional features
