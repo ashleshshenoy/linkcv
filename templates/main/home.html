@@ -33,7 +33,7 @@
 
             {% if   request.user.resume %}
           
-            <a onclick="message('link copied')" data-url="{{request.build_absolute_uri}}resume/{{request.user.username}}/{{request.user.resume.resumeid}}" id="link-container" class="custom-anchor">Share link</a>
+            <a onclick="message('link copied')" data-url="{{request.build_absolute_uri}}resume/{{request.user.username}}/{{request.user.resume.resumeid}}" id="link-container" class="custom-anchor ">Share link</a>
             <a href="{% url 'preview' user.username user.resume.resumeid  %}" class="custom-anchor">Preview</a>       
             {% else %}
             <a onclick="message('Upload resume to get link.')"  id="link-container" class="custom-anchor" >Share link</a>

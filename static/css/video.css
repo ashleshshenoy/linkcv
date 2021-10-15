@@ -2,6 +2,8 @@ body{
     display:flex;
     align-items:center;
     justify-content: center;
+    padding-left:6rem;
+
 }
 
 .box{
@@ -11,7 +13,9 @@ body{
     flex-direction:column;
     align-items: center;
     box-sizing: border-box;
-    border:20px solid var(--primary) ;
+    background-color: #f9fafb;
+    border:0.5rem solid #d1d5db ;
+
 }
 .display-container{
     padding:1rem;
@@ -61,7 +65,7 @@ body{
 
 #video-title  { 
     background-color: transparent !important;
-    border: 4px solid var(--primary);
+    border: 1px solid var(--primary);
     border-radius:0.4rem !important;
     min-width:15rem; 
     height: 5rem;
@@ -70,13 +74,9 @@ body{
 
 }
 ::-webkit-file-upload-button, button{
-    
-    background-color: var(--primary) ;
-    border-radius:0.4rem !important;
     min-width:15rem; 
-    height: 3rem;
-    color:var(--third);    
-
+    height: 2.5rem;
+    border-radius: 0.4rem !important
 }
 
 ::-webkit-input-placeholder{

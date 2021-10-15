@@ -22,7 +22,9 @@ body{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border:20px solid var(--primary) ;
+    border:0.5rem solid #d1d5db ;
+    background-color: #f9fafb;
+    
 }
 
 
@@ -37,13 +39,13 @@ form{
 
 
 ::-webkit-file-upload-button , button {
-    width:10rem;
-    border-radius: 0.4rem !important;
-    height: 3rem;
-    border: 5px solid var(--primary);
-    background-color: var(--primary);
+    width:8rem;
+    border-radius: 10rem !important;
+    height: 2.5rem;
+    border:0px;
+    background-color: var(--button);
     color:white ;
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
 }
 
 ::-webkit-file-upload-button:hover , button:hover {
