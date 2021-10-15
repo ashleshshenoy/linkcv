@@ -13,6 +13,7 @@ body {
 }
 
 .custom-navbar-container {
+    position: relative;
     padding-top:1rem;
     height: 100vh;   
     position:fixed;
@@ -44,7 +45,8 @@ body {
     display:flex;    
     height: 2.5rem;
     width: 2.5rem;
-    margin-top:22rem;
+    position: absolute;
+    bottom:20px;
 }   
 
 
