@@ -1,5 +1,10 @@
 :root{
-    --primary  : #1E3F66;
+    --base:   #F4F5FF ;
+    --button : #000114;
+    --primary  : #000228;
+    --secondary:#000028 ;
+    --third:white;
+    
 }
 
 body{
@@ -14,10 +19,11 @@ body{
 
 
 .resume-container{
-    position:relative;
     width:70%;
-    border:20px  solid var(--primary);
+    border:10px solid var(--base)
 }
+
+
 
 
 #pdf{
@@ -29,7 +35,6 @@ body{
 
 .video-container{
     width:30%;
-    border:20px  solid var(--primary);
     display:flex;
     margin:0px;
     flex-direction:column;
@@ -90,14 +95,15 @@ body{
 
 #back-button{
     text-align: center;
-    color: white;
-    font-size:36px;
+    color: var(--button);
+    font-size:32px;
     position: absolute;
     top:0px;
+    left:0px;
     border:0px;
-    width: 65px;
-    height: 65px;
-    background-color:var(--primary);
+    width: 40px;
+    height: 40px;
+    background-color:var(--base);
     z-index: 2;
 }
 
@@ -151,6 +157,7 @@ body{
 
   }
 
+  
 
 
 

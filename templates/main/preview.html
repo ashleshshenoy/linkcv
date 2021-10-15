@@ -13,7 +13,7 @@
 
     {% if video_check and resume_check  %}
   
-        <div class="preview-container">
+    <div class="preview-container">
           
           <div class="resume-container">
             <a href="{% url 'home-page' %}">
@@ -21,7 +21,7 @@
                 <i class="fa fa-arrow-circle-left"></i>  
               </button>
             </a>
-            <embed  id="pdf" src="{{resume.file.url}}" frameBorder="0" >
+            <embed  id="pdf" src="{{resume.file.url}}#toolbar=0& navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0 " frameBorder="0" >
           </div>
 
 
@@ -64,7 +64,7 @@
     id="pdf"
     src="{{ resume.file.url }}#toolbar=0& navpanes=0&scrollbar=0&statusbar=0&messages=0&scrollbar=0 "
     width="100%"
-    style="border: 20px solid var(--primary); height: 100vh;
+    style="border: 10px solid var(--base); height: 100vh;
       box-sizing: border-box;
     " ></iframe>
     
